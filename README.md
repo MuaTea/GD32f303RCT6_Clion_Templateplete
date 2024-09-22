@@ -14,6 +14,7 @@ https://blog.csdn.net/weixin_43932857/article/details/130542569
 
 为了利用stm32f10x的cfg文件，本模板修改了openocd的配置文件，在/usr/local/share/openocd/scripts/target目录下，
 将`stm32f1x.cfg`文件复制一份并改名为`gd32f303rct6.cfg`(照自己需求)，找到以下配置：
+(修改好的文件我放在项目中OpenOCD/gd32f303rct6.cfg)
 
 # flash size will be probed
 set _FLASHNAME $_CHIPNAME.flash
