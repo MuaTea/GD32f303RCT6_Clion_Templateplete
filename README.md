@@ -13,7 +13,7 @@ Keil 重定向参考文档：[https://blog.csdn.net/qq_34810707/article/details/
 最重要的重定向找到了 FLASH.ld 引用自 CSDN 的一位作者，感谢！下面是他的博客  
 [https://blog.csdn.net/weixin_43932857/article/details/130542569](https://blog.csdn.net/weixin_43932857/article/details/130542569)
 
-### 这里我自己的修改的一些修改：
+### 以下我自己的修改的一些修改：
 
 为了利用 stm32f1xx.cfg 的文件，标准板修改了 openocd 的配置文件，在 `/usr/local/share/openocd/scripts/target` 目录下，将 `stm32f1xx.cfg` 文件复制一份并改名为 `gd32f303rct6.cfg`（原目录未动），找到下配置。（修改好的文件我放在项目的 `OpenOCD/gd32f303rct6.cfg`）
 
