@@ -21,11 +21,13 @@ Keil 重定向参考文档：[https://blog.csdn.net/qq_34810707/article/details/
 
 ```bash
 set _FLASHNAME $_CHIPNAME.flash flash bank $_FLASHNAME stm32f1x 0x08000000 $_FLASH_SIZE 0 0 $_TARGETNAME
+```
 手动指定 Flash 大小为 256KB (0x00040000)
-
+```bash
 set _FLASHNAME $_CHIPNAME.flash flash bank $_FLASHNAME stm32f1x 0x08000000 0x00040000 0 0 $_TARGETNAME
-
-并找到下面代码段 
+```
+并找到下面代码段
+```bash
 #jtag scan chain if { [info exists CPUTAPID] } { set _CPUTAPID $CPUTAPID } else { if { [using_jtag] } {
 
 See STM Document RM0008 Section 26.6.3
@@ -34,5 +36,5 @@ set _CPUTAPID 0x3ba00477
 this is the SW-DP tap id not the jtag tap id
 
 set _CPUTAPID 0x1ba01477
-
+```
 并修改 0x1ba01477 为 0x2ba01477
