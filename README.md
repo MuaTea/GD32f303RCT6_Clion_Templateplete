@@ -11,6 +11,8 @@ printf has been redirected in both CLion and Keil.
 For Keil, the redirection was based on the following documentation:
 https://blog.csdn.net/qq_34810707/article/details/112255306
 
+"I redirected the printf function for the GD32F303 based on the template provided by the expert, and made slight modifications to the gd32f30x.h file."
+
 The most important redirection was found in the FLASH.ld file, referenced from a CSDN author. Huge thanks! Here's a link to their blog:
 https://blog.csdn.net/weixin_43932857/article/details/130542569
 
@@ -51,6 +53,8 @@ STM32F103ZET6 标准库，标准库版本：**V3.6.0 / 20-September-2021**
 Clion 和 Keil 中已重定向自己到 printf。
 
 Keil 重定向参考文档：[https://blog.csdn.net/qq_34810707/article/details/112255306](https://blog.csdn.net/qq_34810707/article/details/112255306)
+
+“我根据大佬的模板，重定向了 gd32f303 的 printf ，并对 gd32f30x.h 稍作了修改 。”
 
 最重要的重定向找到了 FLASH.ld 引用自 CSDN 的一位作者，感谢！下面是他的博客  
 [https://blog.csdn.net/weixin_43932857/article/details/130542569](https://blog.csdn.net/weixin_43932857/article/details/130542569)
