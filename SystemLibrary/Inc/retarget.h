@@ -8,6 +8,6 @@
 #include "gd32f30x.h"
 #include "stdio.h"
 
-//void printf_retarget(uint32_t bound, USART_TypeDef *uarTx);
+void printf_retarget(uint32_t bound, uint32_t usart_base);
 
 #endif //STM32F103ZET6_STDPERIPH_LIB_TEMPLATE_RETARGET_H
