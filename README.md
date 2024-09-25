@@ -16,7 +16,7 @@ https://blog.csdn.net/qq_34810707/article/details/112255306
 The most important redirection was found in the FLASH.ld file, referenced from a CSDN author. Huge thanks! Here's a link to their blog:
 https://blog.csdn.net/weixin_43932857/article/details/130542569
 
-### Below are some of my own modifications:
+Below are some of my own modifications:
 
 To make use of the stm32f1xx.cfg file, I modified OpenOCD's configuration. In the /usr/local/share/openocd/scripts/target directory, I copied the stm32f1xx.cfg file and renamed it to gd32f303rct6.cfg (leaving the original untouched). You can find this modified file in the project under OpenOCD/gd32f303rct6.cfg.
 ---
