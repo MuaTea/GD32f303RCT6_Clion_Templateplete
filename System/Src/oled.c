@@ -385,18 +385,16 @@ void OLED_ShowPicture(u8 x,u8 y,u8 sizex,u8 sizey,u8 BMP[],u8 mode)
 //OLED的初始化
 void OLED_Init(void)
 {
-	GPIO_InitTypeDef  GPIO_InitStructure;
+// 启用 GPIOB 时钟
+    rcu_periph_clock_enable(RCU_GPIOB);
 
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);//使能端口时钟
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9; 
- 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//速度50MHz
- 	GPIO_Init(GPIOB, &GPIO_InitStructure);	  
- 	GPIO_SetBits(GPIOB, GPIO_Pin_8 | GPIO_Pin_9);
-	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_5 | GPIO_Pin_7;
-	GPIO_Init(GPIOB, &GPIO_InitStructure);
-	GPIO_SetBits(GPIOB, GPIO_Pin_6 | GPIO_Pin_5 | GPIO_Pin_7);
+    // 配置 GPIOB 引脚 8 和 9
+    gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_8 | GPIO_PIN_9);
+    gpio_bit_set(GPIOB, GPIO_PIN_8 | GPIO_PIN_9);  // 设置 GPIOB 引脚 8 和 9 输出高电平
+
+    // 配置 GPIOB 引脚 5、6 和 7
+    gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7);
+    gpio_bit_set(GPIOB, GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7);  // 设置 GPIOB 引脚 5、6 和 7 输出高电平
 	
 	OLED_RES_Clr();
 	delay_ms(200);

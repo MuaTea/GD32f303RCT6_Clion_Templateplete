@@ -1,7 +1,4 @@
 #include "oled_temp.h"
-#include "t_h.h"
-#include "oled.h"
-#include "systick.h"
 
 extern float temperature;
 extern float humidity;

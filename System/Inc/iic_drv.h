@@ -1,7 +1,7 @@
 #ifndef __IIC_DRV_H
 #define __IIC_DRV_H
 
-#include "stm32f10x.h"
+#include "gd32f30x.h"
 
 // 定义 SDA 和 SCL 引脚
 #define SCL_PIN GPIO_Pin_11  // SCL 对应的 GPIO 引脚

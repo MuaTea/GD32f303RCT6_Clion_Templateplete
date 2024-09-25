@@ -1,9 +1,8 @@
 #ifndef __OLED_H
 #define __OLED_H 
 
-#include "system.h"
 #include "stdlib.h"	
-#include "stm32f10x.h"
+#include "gd32f30x.h"
 
 //-----------------测试LED端口定义---------------- 
 
@@ -22,23 +21,23 @@ DC -> 数据/命令控制引脚
 CS -> 片选引脚
 */
 
-#define OLED_SCL_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_8) // SC 对应 SCL
-#define OLED_SCL_Set() GPIO_SetBits(GPIOB, GPIO_Pin_8)
+#define OLED_SCL_Clr() gpio_bit_reset(GPIOB, GPIO_PIN_8) // SC 对应 SCL
+#define OLED_SCL_Set() gpio_bit_set(GPIOB, GPIO_PIN_8)
 
-#define OLED_SDA_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_9) // D1 对应 SDA
-#define OLED_SDA_Set() GPIO_SetBits(GPIOB, GPIO_Pin_9)
+#define OLED_SDA_Clr() gpio_bit_reset(GPIOB, GPIO_PIN_9) // D1 对应 SDA
+#define OLED_SDA_Set() gpio_bit_set(GPIOB, GPIO_PIN_9)
 
-#define OLED_RES_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_6) // RST 对应复位
-#define OLED_RES_Set() GPIO_SetBits(GPIOB, GPIO_Pin_6)
+#define OLED_RES_Clr() gpio_bit_reset(GPIOB, GPIO_PIN_6) // RST 对应复位
+#define OLED_RES_Set() gpio_bit_set(GPIOB, GPIO_PIN_6)
 
-#define OLED_DC_Clr()  GPIO_ResetBits(GPIOB, GPIO_Pin_5) // RS 对应数据/命令选择
-#define OLED_DC_Set()  GPIO_SetBits(GPIOB, GPIO_Pin_5)
+#define OLED_DC_Clr()  gpio_bit_reset(GPIOB, GPIO_PIN_5) // RS 对应数据/命令选择
+#define OLED_DC_Set()  gpio_bit_set(GPIOB, GPIO_PIN_5)
 
-#define OLED_CS_Clr()  GPIO_ResetBits(GPIOB, GPIO_Pin_7) // CS 对应片选
-#define OLED_CS_Set()  GPIO_SetBits(GPIOB, GPIO_Pin_7)
+#define OLED_CS_Clr()  gpio_bit_reset(GPIOB, GPIO_PIN_7) // CS 对应片选
+#define OLED_CS_Set()  gpio_bit_set(GPIOB, GPIO_PIN_7)
 
-#define OLED_BLK_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_4) // BLK 对应背光控制
-#define OLED_BLK_Set() GPIO_SetBits(GPIOB, GPIO_Pin_4)
+#define OLED_BLK_Clr() gpio_bit_reset(GPIOB, GPIO_PIN_4) // BLK 对应背光控制
+#define OLED_BLK_Set() gpio_bit_set(GPIOB, GPIO_PIN_4)
 
 
 

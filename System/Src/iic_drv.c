@@ -4,58 +4,52 @@
 
 float CO2;
 
+#include "gd32f30x.h"
+
+// CO2 I2C 初始化
 void CO2_IIC_Init(void) {
-    // 使能GPIO时钟
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+    // 使能GPIOB时钟
+    rcu_periph_clock_enable(RCU_GPIOB);
 
     // GPIO初始化
-    GPIO_InitTypeDef GPIO_InitStruct;
-    GPIO_InitStruct.GPIO_Pin = SCL_PIN | SDA_PIN;
-    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_OD;
-    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(I2C_GPIO_PORT, &GPIO_InitStruct);
+    gpio_init(GPIOB, GPIO_MODE_OUT_OD, GPIO_OSPEED_50MHZ, GPIO_PIN_6 | GPIO_PIN_7);  // 假设 SCL 和 SDA 分别为 GPIOB 引脚 6 和 7
 }
 
+// 将 SDA 配置为输出模式
 void SDA_OutputMode_CO2(void) {
-    GPIO_InitTypeDef GPIO_InitStruct;
-    GPIO_InitStruct.GPIO_Pin = SDA_PIN;
-    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_OD;
-    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(I2C_GPIO_PORT, &GPIO_InitStruct);
+    gpio_init(GPIOB, GPIO_MODE_OUT_OD, GPIO_OSPEED_50MHZ, GPIO_PIN_7);  // 假设 SDA 是 GPIOB 引脚 7
 }
 
+// 将 SDA 配置为输入模式
 void SDA_InputMode_CO2(void) {
-    GPIO_InitTypeDef GPIO_InitStruct;
-    GPIO_InitStruct.GPIO_Pin = SDA_PIN;
-    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(I2C_GPIO_PORT, &GPIO_InitStruct);
+    gpio_init(GPIOB, GPIO_MODE_IN_FLOATING, GPIO_OSPEED_50MHZ, GPIO_PIN_7);  // 假设 SDA 是 GPIOB 引脚 7
 }
 
 // 设置 SDA 引脚为高电平
 void SDA_High_CO2(void) {
-    GPIO_SetBits(I2C_GPIO_PORT, SDA_PIN);
+    gpio_bit_set(GPIOB, GPIO_PIN_7);  // 假设 SDA 是 GPIOB 引脚 7
 }
 
 // 设置 SDA 引脚为低电平
 void SDA_Low_CO2(void) {
-    GPIO_ResetBits(I2C_GPIO_PORT, SDA_PIN);
+    gpio_bit_reset(GPIOB, GPIO_PIN_7);  // 假设 SDA 是 GPIOB 引脚 7
 }
 
 // 设置 SCL 引脚为高电平
 void SCL_High_CO2(void) {
-    GPIO_SetBits(I2C_GPIO_PORT, SCL_PIN);
+    gpio_bit_set(GPIOB, GPIO_PIN_6);  // 假设 SCL 是 GPIOB 引脚 6
 }
 
 // 设置 SCL 引脚为低电平
 void SCL_Low_CO2(void) {
-    GPIO_ResetBits(I2C_GPIO_PORT, SCL_PIN);
+    gpio_bit_reset(GPIOB, GPIO_PIN_6);  // 假设 SCL 是 GPIOB 引脚 6
 }
 
-// 读取 SDA 的状态
+// 读取 SDA 引脚的状态
 uint8_t SDA_Read_CO2(void) {
-    return GPIO_ReadInputDataBit(I2C_GPIO_PORT, SDA_PIN);
+    return gpio_input_bit_get(GPIOB, GPIO_PIN_7);  // 假设 SDA 是 GPIOB 引脚 7
 }
+
 
 // 起始信号
 void CO2_I2C_Start(void) {

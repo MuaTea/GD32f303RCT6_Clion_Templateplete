@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Hardware/Inc/4g.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Hardware/Inc/esp8266.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Hardware/Inc/gps.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Hardware/Inc/onenet.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Hardware/Src/4g.c" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Hardware/Src/esp8266.c" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Hardware/Src/gps.c" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Hardware/Src/onenet.c" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Hardware/Src/onenet_drv.c" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Hardware/Src/t_h.c" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/System/Src/systick.c" charset="GBK" />
+  </component>
+</project>

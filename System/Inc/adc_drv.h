@@ -2,7 +2,8 @@
 #define __ADC_DRV_H
 
 //头文件
-#include "stm32f10x.h"
+#include "gd32f30x.h"
+#include "systick.h"
 
 //函数声明
 void ADC_MyConfig(void);

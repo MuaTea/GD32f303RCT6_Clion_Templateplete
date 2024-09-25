@@ -1,7 +1,7 @@
 #ifndef __TIM_DRV_H
 #define __TIM_DRV_H
 
-#include "stm32f10x.h"
+#include "gd32f30x.h"
 
 
 
